@@ -288,7 +288,7 @@ float LIS3DH::getZAcceleration() {
  */
 float LIS3DH::convertReadingToAccel(int16_t reading) {
 	// Take the 16 bit integer we read, cast it as a float, normalized it to half the max reading
-	float finalAccel = ((float)(reading)) / ((float)32767) * ((float)(2));
+	float finalAccel = ((float)(reading)) * .000061;
 	return finalAccel;
 }
 
